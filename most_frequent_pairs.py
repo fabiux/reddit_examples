@@ -14,6 +14,7 @@ from pymongo import MongoClient
 from operator import itemgetter
 from time import time
 
+# subreddit_id and subreddit description
 topics = {'t5_2r3gv': 'MachineLearning',
           't5_31xmi': 'textdatamining',
           't5_2s9be': 'bigdata'}
