@@ -8,7 +8,7 @@ Author: Fabio Pani <fabiux AT fabiopani DOT com>
 License: see LICENSE
 """
 from nltk.stem.lancaster import LancasterStemmer  # FIXME try another stemmer
-from stop_words import get_stop_words
+from nltk.corpus import stopwords
 from re import compile
 from pymongo import MongoClient
 from operator import itemgetter
@@ -78,7 +78,7 @@ def most_frequent_pairs(topic_id):
     return sorted(pairs.items(), key=itemgetter(1), reverse=True)  # sorted from most to less frequent
 
 if __name__ == '__main__':
-    stop_words = get_stop_words('english')  # stop words to skip
+    stop_words = stopwords.words('english')  # stop words to skip
     st = LancasterStemmer()
     r = compile('[^a-z_]')
 
